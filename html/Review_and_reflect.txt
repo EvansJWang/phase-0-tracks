@@ -1,0 +1,28 @@
+
+Briefly describe your understanding of what the browser does, including definitions of the following:
+client - The computer that you are working on
+server - another computer that is hosting the information you're looking for or want to connect to
+render - Display the information so that a human can understand
+
+What is HTML? In your answer, include definitions of the following:
+tag - keywords that indicate to the computer to perform a certain function or display content a certain way
+element - line content of a website that comprises of everything from start tag to end tag
+node - information that is between tags
+attribute - adjusts the way the element will function
+block element - is an element that has a line break before and after the element
+inline element - used within an element and concludes within a block level element.
+
+Very briefly, explain the purpose of the following elements:
+head - tag that houses the title and other head elements
+body - All the information that will populate within the browser
+p - paragraph tag - creates a paragraph within the body of your document
+form - create a form that allows users input information like asking for email to subscribe to newsletters.
+div - block element that has no semantic meaning that creates a space similar to the "return" key
+span - used to group together in-line elements and can be used to style chunks of data
+select - used in <form> to collect users input, creates a drop down menu
+h2 - header tag that is secondary in importance to h1 tag
+ol - ordered list tag, followed up with list tag <li></li>
+ul - unordered list tag, followed up with list tag <li></li>
+table - creates a spreadsheet within your document
+tr - table row - indicates that this is a row within the table
+td - table data - indicates that this is the data that you use to populate in the table
