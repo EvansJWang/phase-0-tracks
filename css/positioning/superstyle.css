@@ -1,0 +1,19 @@
+
+#glasses {
+position:absolute;
+z-index:1;
+left:270px;
+top:225px;
+}
+#octopus {
+position:absolute;
+z-index:-1;
+left:225px;
+top:125px;
+}
+#hat {
+position:absolute;
+z-index:2;
+left:210px;
+top:50px;
+}
