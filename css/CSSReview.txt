@@ -1,0 +1,78 @@
+Name at least three categories of CSS adjustments (example: colors)?
+Colors,
+background images
+borders
+fonts
+list (the bullet style)
+hover over
+positioning
+
+
+What are the three ways to link a CSS rule to an HTML document? Which one is the best and why?
+
+1. Link [place in <head>]
+<link rel="stylesheet" type="text/css" href="mystyles.css"/>
+
+2. Embed directly into the HTML [place in <head>]
+<style media="screen" type="text/css">
+
+(All Style rules here)
+
+</style>
+
+3. Add styling directly inline to HTML tags 
+for example:
+
+<h1 style="color:red;background:blue;">header with red font color and blue background</h1>
+
+I believe Linking is best because it allows you to organize and change styles on large portions/sections of the HTML and if they go to other links on your website, the CSS is already cached so the browser only needs to load the HTML making it faster.
+
+What is a selector? Give examples of at least three types of selectors.
+A selector is a designator for CSS that tells it which parts of the HTML to style.
+examples are:
+.class
+#id
+*      - ALL ELEMENTS
+<element> - for example <p> or <section>
+
+
+What is the box model?
+The box model refers to how all elements in CSS are framed. Visually you can see where the margin, border,padding and content are in relation to each other.
+
+Explain and give an example of the cascading effect of CSS.
+More specific styles will take precedence over more "general" styles.
+
+and example would be if we were to add style to the following:
+
+<body>
+  <main class="mainbody">
+    <p id="firstparagraph"> </p>
+    <p> </p>
+  </main>
+</body>
+
+if we added:
+
+body {
+  background: blue;
+}
+
+#mainbody {
+  background yellow
+}
+
+.firstparagraph {
+  background green
+}
+
+then the entire body will be blue, the main section will be yellow (basically the second paragraph)
+ and the first paragraph would be green. the more specific the style the higher it will be in the hierarchy of execution.
+
+
+Name two CSS techniques that assist in responsive design.
+
+Media Query - the style properties will apply only when certain conditions are met. For example
+if the screen hits a certain width, you can change the size of all the fonts. 
+
+Using Width and Max-width property: Instead of setting certain elements to an exact size like 960px, you can use percentages like 80% that will allow the element to adjust it's size based on the viewport screen size.
+
