@@ -8,3 +8,16 @@ Press door close button
 Wait for elevator to travel to specified floor, If there are other stops with other passengers, wait until the floor you are looking for and then exit the elevator.
 
 
+Release 1:
+How to make coffee
+1. Turn on coffee maker
+2. Open filter tray
+3. Remove old filter and coffee grinds (if present)
+4. Put new filter into tray
+5. Put two scoops of coffee grounds into filter(which is in the tray)
+6. Place tray back into coffee machine
+7. Fill water reserve until the fill line (if required)
+8. Place cup in the cup tray 
+9. Wait for coffee drip to complete
+10. Wait a few mins while coffee cools
+11. Enjoy coffee like a champ!
