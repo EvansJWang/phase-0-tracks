@@ -1,0 +1,27 @@
+body {
+  background-color: grey;
+
+}
+
+h1 {
+  padding-left: 30%;
+  font-family: "times new roman";
+    background-image: url(smart-head-en.jpg);
+    background-size: contain;
+}
+
+
+.column-1 {
+  float: left;
+  width: 50%;
+}
+
+.column-2 {
+  float: right;
+  width: 50%;
+}
+
+footer {
+  clear:both;
+  text-align: center;
+}
