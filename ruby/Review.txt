@@ -1,18 +1,38 @@
 Variables
 1. What is a variable? Why might a programmer use a variable?
+A Variable is stored memory assigned to a value. For example : X = 22
+22 is the stored memory and the value of X is now 22 but it could be anything you want.
+
+A programmer might want to use a variable because it stores chunks of information and can be manipulated in multiple ways, like methods. Variables also save from having to type large chunks of information over and over again.
 
 2. If the value of first_name is "Abraham" and last_name is "Lincoln", explain the order in which Ruby will run the line full_name = first_name + last_name, and what the final result will be.
+Ruby will break everything down to its simpliest form and combine them.
+Starting with the right side of the equation it will replace first_name with Abraham to look like
+
+full_name = "Abraham" + last_name
+
+then replace last_name with "Lincoln"
+
+to look like this
+
+full_name = "Abraham" + "Lincoln"
+
+Then actually add them to be full_name = "AbrahamLincoln"
+then assign the variable full_name the value of "AbrahamLincoln"
+#probably should of used a space somewhere
 
 Data Types
 3. For each of the following data types, write a short definition and give at least one example of when you might use the data type in a program. (Don't use an example we've already provided.)
 
-string
-integer
-float
-nil
-boolean
-Algorithms
-4. What is an algorithm?
+string - "word"
+integer - 8675309
+float - 3.14
+nil - 
+boolean - 
+Algorithms - 
+
+
+4. What is an algorithm? see sweet definition above
 
 5. What are two common categories of algorithm in computer science? 
 
