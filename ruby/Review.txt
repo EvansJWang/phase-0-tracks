@@ -76,9 +76,9 @@ A programmer might choose to use control flow to gather information and terminat
 
 10. Define the following terms as they relate to flow control.
 
-loop - 
-if - 
-else - 
-elsif - 
-while - 
-until - 
+loop - code that is repeated until certain conditions are met
+if - a command that allows the program to branch out and execute lines of code based on specified conditions
+else - Will run this command if none of the conditions in the if loop are met 
+elsif - Will run this line of code if this specified line of code's conditions are met if the 'if' condition is not met
+while - Continue to execute the code as long as the condition is met
+until - continue to execute the code until a specfic condition is met
