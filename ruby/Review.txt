@@ -27,35 +27,58 @@ Data Types
 string - "word"
 integer - 8675309
 float - 3.14
-nil - 
-boolean - 
-Algorithms - 
-
+nil - No value 
+boolean - is an expression with the values of true or false  ex: 4 > 3 = True
+Algorithms - A step by step procedure similar to a recipe that a program will follow to reach a goal #That you determine. Utilizes inputs and provides outputs
+ex: Algorithm for going to work.
+1. Wake up
+2. Go to bathroom
+3. Brush teeth
+4. Walk to kitchen
+5. Drink Juice straight from the carton like a boss
+6. Get dressed
+7. Go to car and start it up
+8. Listen to your good friend google maps on directions to jobsite
+9. Park the car and walk inside building
+10. Make that $$$$
 
 4. What is an algorithm? see sweet definition above
 
 5. What are two common categories of algorithm in computer science? 
+Sort Algorithms 
+
+Search Algorithms 
 
 Methods
 6. What is a method? Why might a programmer choose to use a method?
+ A method is a function that is defined by the user that returns a value. A programmer would use a method so that he/she can manipulate data that is scalable with unknown variables.
+
 
 7. Define the following terms as they relate to a method. 
 
-return value
-side effect
-parameter
-argument
-implicit return
+return value - The value of the method after running the defined algorithm 
+side effect - An expression that effects other input that does not have any return value in of itself
+parameter - The variable used to hold where an argument would be used as an input in a method
+argument - The value of the input used to run through a method when it is called
+implicit return - the last evaluated line of code in a method that does not specifically have the command ```return``` will be the output
+
 8. What are global scope and method scope? How do those scopes impact the availability of data at different points in a program?
+
+Global scope - The list of variables that exist in the entire ruby programming
+method scope - the list of active variables that work only within that specified method
+
+The data that is available inside a method scope will not function outside the method in the same way it does inside the method and variables can be assigned different values outside the method that does not affect the method.
 
 Control Flow
 9. What is control flow? Why might a programmer choose to use flow control?
+Control flow is allows a program to make decisions based on the input received and what it is told to do with specific or non-specific responses from the user.
+A programmer might choose to use control flow to gather information and terminate the program when all of the information is collected. Or make suggestions based on a user's input.
 
 10. Define the following terms as they relate to flow control.
 
-loop
-if
-else
-elsif
-while
-until
+loop - 
+if - 
+else - 
+elsif - 
+while - 
+until - 
