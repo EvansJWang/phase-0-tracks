@@ -3,11 +3,12 @@
   # make array of the first and last name.
   # change index 0 to index 1 and vice versa
 # 2. change all the vowels(a,e,i,o,u) to next vowel 
+ #   2a. add to method for upcase characters
   # create a variable that lists only vowels 
 # 3. change all consonants to the next consonant.
+ #   3a add to method for upcase characters 
   # create a variable that lists only alphabet
-
-  # idea from last project.
+# 4. combine the methods
 
 # method to swap first name with last name
 # split the first name and last name 
@@ -17,13 +18,8 @@
   name.reverse!
   #create a string from the array and add the space between the first and last name
   swapped_name = name[0] + " " + name[1]
-  return swapped_name
- end
 
-p nameswap("Evans Wang")
-
-def letter_changer(word)
-    #Assign vowels to varible in an array
+  #Assign vowels to varible in an array
   vowels = ["a","e","i","o","u"]
   #Assign upcase vowels to variable in an array
   upcase_vowels = ["A","E","I","O","U"]
@@ -32,36 +28,34 @@ def letter_changer(word)
   #Assign upcase consonants to variable
   upcase_consonants = ["B","C","D","F","G","H","J","K","L","M","N","P","Q","R","S","T","V","W","X","Y","Z"]
   index = 0
-  while index < word.length
+  while index < swapped_name.length
     #Add conditional statement to check if current position in word isn't a space.
     #If there is a space, move on to next letter
     #Conditional statement to check if it is a vowel 
-    if (word[index] != " ") && consonants.include?(word[index])
+    if (swapped_name[index] != " ") && consonants.include?(swapped_name[index])
       #Find position in the vowel of the current letter and add 1 to it to get index of next vowel
-      new_index = consonants.index(word[index])
+      new_index = consonants.index(swapped_name[index])
       #replace the vowel with next vowel
-      word[index] = consonants[(new_index+1)]
-     elsif upcase_consonants.include?(word[index])
-      new_index = upcase_consonants.index(word[index])
-      word[index] = upcase_consonants[(new_index+1)]
+      swapped_name[index] = consonants[(new_index+1)]
+     elsif upcase_consonants.include?(swapped_name[index])
+      new_index = upcase_consonants.index(swapped_name[index])
+      swapped_name[index] = upcase_consonants[(new_index+1)]
       #Vowel changer
-      elsif vowels.include?(word[index]) #checks if the letter at the current index is included in the array
+      elsif vowels.include?(swapped_name[index]) #checks if the letter at the current index is included in the array
       #Find position in the vowel of the current letter and add 1 to it to get index of next vowel
-      new_index = vowels.index(word[index])
+      new_index = vowels.index(swapped_name[index])
       #replace the vowel with next vowel
-      word[index] = vowels[(new_index+1)]
+      swapped_name[index] = vowels[(new_index+1)]
       #Add conditional check if the vowel is upcase and replace with upcase vowel
-    elsif upcase_vowels.include?(word[index])
-      new_index = upcase_vowels.index(word[index])
-      word[index] = upcase_vowels[(new_index+1)]
+    elsif upcase_vowels.include?(swapped_name[index])
+      new_index = upcase_vowels.index(swapped_name[index])
+      swapped_name[index] = upcase_vowels[(new_index+1)]
     end
-    index += 1
-  end
-  #Output the result
-  return word
+    index += 1 
+ end
+   return swapped_name
 end
-
-p letter_changer("yes SiR! HeLlOo")
+p nameswap("Felicia Torres")
 
 
 =begin
