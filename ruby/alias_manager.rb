@@ -12,21 +12,26 @@
 
 # method to swap first name with last name
 # split the first name and last name 
- def nameswap(x)
+# method to swap first name with last name
+# split the first name and last name 
+
+def nameswap(x)
+  if  x.include?(" ") != true # check if there is a space, if none then just reverse name for fun!
+   x.reverse!
+  else
    name = "#{x}".split(' ')
    #Switch the order of first and last name 
   name.reverse!
   #create a string from the array and add the space between the first and last name
   swapped_name = name[0] + " " + name[1]
-
   #Assign vowels to varible in an array
-  vowels = ["a","e","i","o","u"]
-  #Assign upcase vowels to variable in an array
-  upcase_vowels = ["A","E","I","O","U"]
+  vowels = ["a","e","i","o","u","a"]# added extra "a" to account for "u"
+  #Assign upcase vowels to variable in an array 
+  upcase_vowels = ["A","E","I","O","U","A"]# added extra "A" to account for "U"
   #Assign consonants to varible
-  consonants = ["b","c","d","f","g","h","j","k","l","m","n","p","q","r","s","t","v","w","x","y","z"]
+  consonants = ["b","c","d","f","g","h","j","k","l","m","n","p","q","r","s","t","v","w","x","y","z","b"]# added extra "b" to account for "z"
   #Assign upcase consonants to variable
-  upcase_consonants = ["B","C","D","F","G","H","J","K","L","M","N","P","Q","R","S","T","V","W","X","Y","Z"]
+  upcase_consonants = ["B","C","D","F","G","H","J","K","L","M","N","P","Q","R","S","T","V","W","X","Y","Z","B"]# added extra ""B to account for Z
   index = 0
   while index < swapped_name.length
     #Add conditional statement to check if current position in word isn't a space.
@@ -55,7 +60,12 @@
  end
    return swapped_name
 end
+end # end first if 
+
 p nameswap("Felicia Torres")
+
+alias_database = [] # empty array to feed names to
+
 
 
 =begin
@@ -122,21 +132,28 @@ p consonants("yes SiR!")
 # # Release 1
 # ### USER INTERFACE
 
-# loop through name and output "name changer method" until user types 'quit' or enters ''
+# loop through name and output "name changer method" until user types 'quit' 
+# need to create an array & push method's answer into
+# print array
 
 # puts "What is your name?"
 # agent_name = gets.chomp
 
-# p nameswap(agent_name)
+
+puts "Whats your name? First and Last"
+agent_name = gets.chomp
+p "Do you want me to give you your secret agent name? type 'quit' to stop"
+scramble = gets.chomp
+until scramble == "quit"
+   nameswap(agent_name)
+   p "#{nameswap(agent_name)} is actually #{agent_name}"
+    alias_database << nameswap(agent_name)
+  p "Another name? type 'quit' to stop"
+    scramble && agent_name = gets.chomp
+    break if agent_name == "quit" # NEED to break code if user types quit. otherwise "quit" will run in method
+end
+
+p alias_database
 
 
 
-
-# #Release 2
-
-
-#Release 0
-# check for upper case on vowels and consonants
-#   write separate method for uppercasees and replace with uppercase
-#   ex: check for "E" and replace with "I" but if input is "e" replace with "i"
-#   
