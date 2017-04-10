@@ -1,0 +1,43 @@
+1. Why are data structures useful in programming?
+
+Data structures are useful in programming because it allows you to store large amounts of data and assign them to a variable. It can be sorted and reorganized at will and capable of iterating through each item to perform functions, allowing algorithms to be much more complex
+Arrays
+2. Define "array" and describe the characteristics of an array.
+An array is a collection of data and they are integer-indexed for reference. This means that the first item of the array starts at 0 and counts up until the last item. The array can hold all types of information, strings, numbers and nil.
+
+3. Give two original examples of data sets that an array might be well-suited for.
+Anything information that you would want stored in a "folder" would be good for an Array. 
+
+For example, lists are always great. An array of your favorite books.
+
+Another example would be if you had a bucket list of things you wanted to do
+
+
+Hashes
+4. Define "hash" and describe the characteristics of a hash.
+
+A hash is a collection of data that has two characteristics. For each item in your hash (which is the key) there is a piece of data associated with it (value). You can summon the value by asking for it by its key and vice versa. The main difference between a hash and array is that the hash is not integer indexed.
+
+5. Give two original examples of data sets that a hash might be well-suited for.
+If you are a teacher you could use hashes to keep track of student records.
+for example KEY would be student name and Value would be their score. This would be for HASH 1 and HASH 2 could contain same KEYS(all students) but the Value would be different based on how they did on the second test.
+
+If you are making a list of foods you like and dont like.
+in the HASH the KEy would be the food and the value could be how much you liked it on a scale of 1-10
+
+Iteration
+6. Why is iteration useful?
+Iteration is useful because you can run simple or complex algorithms and be able to check each of the items within the array or hash and test them for certain conditions then execute blocks of code accordingly
+
+7. Give an example of a real-life task that would require iteration if you wrote an algorithm for it.
+Hand washing laundry. 
+I would take all items in my laundry array. Put it in water, apply soap, scrub dirty spots, then wring and hang to dry. Grab next item of clothing execute same pattern until all clothes are hung. (Assuming nothing is dry clean or even have algorithm to check if dry clean put in dry clean pile for later)
+
+Blocks
+8. What is a block?
+
+A block of code that executes a "program" or algorithm only when called upon. It does not need to be defined and put it between do and end or { }
+
+9. What is a block parameter, and where does its value come from?
+
+block parameters are a value that  gets its value from the array or variable it is called from or from the user
