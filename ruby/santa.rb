@@ -1,4 +1,5 @@
-
+example_genders = ["agender", "female", "bigender", "male", "female", "gender fluid", "N/A"]
+example_ethnicities = ["black", "Latino", "white", "Japanese-African", "prefer not to say", "Mystical Creature (unicorn)", "N/A"]
 ##Release 1 & 2
 class Santa
 end
@@ -16,6 +17,8 @@ class Santa
 end
 
 class Santa
+  attr_reader :age, :ethnicity
+  attr_accessor :gender, :name
   def initialize(gender, ethnicity)
     @gender = gender
     @ethnicity = ethnicity
@@ -34,17 +37,48 @@ end
 
 class Santa
   def get_mad_at(reindeer)
-    reindeer = @reindeer_ranking.last
+    p reindeer
+    p @reindeer_ranking.delete(reindeer)
+    @reindeer_ranking << reindeer
     puts "#{reindeer} is now last on the rankings"
   end
 end
 
+class Santa
+  def gender=(gender)
+    @gender = gender
+  end
+end
 
-nick = Santa.new
+class Santa
+  def santainfo
+    @gender
+    @ethnicity
+    @age
+  end
+end
+
+
+nick = Santa.new("male","white")
 nick.speak
 nick.eat_milk_and_cookiez("oreo")
+nick.get_mad_at("Dasher")
+nick.age
+nick.ethnicity
+
+santaarmy = []
+example_genders.each do |x|
+  santaarmy << Santa.new(example_genders.sample, example_ethnicities.sample)
+end 
+
+santaarmy.each do |y|
+  y.agechanger(rand(140))
+end
 
 class Reindeer
+  attr_reader :name
+  attr_accessor :location
+
   def initialize(name)
     @name = name
     @location = 'the North Pole'
@@ -66,11 +100,6 @@ class Reindeer
   end
 end
 
-reindeer = Reindeer.new("Rudolpho")
-reindeer.take_off(20000)
-reindeer.land("Merica")
-reindeer.aboutreindeer
-
 
 ### Release 2
 class Reindeer
@@ -81,7 +110,7 @@ class Reindeer
   
   def take_off(altitude)
     puts "#{@name} took off!"
-    puts "at #{@altitude}"
+    puts "at #{altitude} ft"
   end
   
   def land(location)
@@ -119,5 +148,6 @@ reindeer.name = "Cool new name"
 ### reindeer.location == attribute @ location both from the initialize method within the class
 puts "#{reindeer.name} is in #{reindeer.location}"
 
-
-
+reindeer = Reindeer.new("Rudolpho")
+reindeer.take_off(20000)
+reindeer.land("Merica")
