@@ -73,4 +73,32 @@ def print_list(list)
   list.each_with_index do |(item,quantity), index|
   p "#{index + 1}: #{item} __
 
-Enter chat message or link here
+# What did you learn about pseudocode from working on this challenge?
+pseudocode really helps me visualize what I need to get done and helps organize my thoughts into manageable chunks of code
+and If i dont know what to write I know what I am looking for and that helps with the searching
+# What are the tradeoffs of using arrays and hashes for this challenge?
+Using an Array would be tricky since there would need to be a value that is associated with each item in the Array.
+The Hash is definitely the way to go on this challenge
+
+# What does a method return?
+The last item of the method. 
+# What kind of things can you pass into methods as arguments?
+you can pass anything really into a method as an arguement like integers, strings, arrays and even other methods
+
+# How can you pass information between methods?
+You assign the value of the method to a variable then use that variable inside another method
+
+# What concepts were solidified in this challenge, and what concepts are still confusing?
+The concept of creating a clean user interface was solidified. I think being able to complete this challenge without the use of Modules or Classes really
+helped with understanding how Classes can be really useful in refactoring
+
+
+
+
+
+
+
+
+
+
+
