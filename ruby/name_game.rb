@@ -13,31 +13,32 @@ class Name_game
    attr_reader :guess_count, :is_over
 
   def initialize
-    @word = "theory"
     @guess_count = 0
     # @is_over = false
   end
 
   def word_to_guess(word_to_guess)
-    @word = word_to_guess
+    word = word_to_guess
   end
+    
 
 def letter_check(letter_guess)
-  @word = @word.split('')
+  word = ["t", "h", "e", "o", "r", "y"]
   i = 0
-  if @word.include?(letter_guess)
-    while i < @word.length 
-      if letter_guess == @word[i]
-       @word[i] = letter_guess
+  if word.include?(letter_guess)
+    while i < word.length 
+      if letter_guess == word[i]
+       word[i] = letter_guess
       else  
-        @word[i] = '_'
+       word[i] = "_"
       end
      i += 1
     end
+    p word
       # @guess_count += 1
   else
-      p "nope try another letter"
-      
+      p "try another letter"
+
        # @guess_count += 1 
   end
   end
