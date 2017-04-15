@@ -18,8 +18,16 @@ describe Name_game do
 
   it "takes user input as a letter and checks if it is (word)" do 
     name_game = Name_game.new
-    word = ["t", "h", "e", "o", "r", "y"]
-    expect(name_game.letter_check("a")).to eq "try another letter"
+    @word = ["t", "h", "e", "o", "r", "y"]
+    expect(name_game.letter_check("a")).to eq "______ try another letter"
     expect(name_game.letter_check("t")).to eq ["t", "_", "_", "_", "_", "_" ]
   end
+
+  it "loop through letter_check until all the letters have been inputted" do 
+    name_game = Name_game.new
+    @word = ["t", "h", "e", "o", "r", "y"]
+    expect(name_game.letter_check1("a")).to eq "try another letter"
+    expect(name_game.letter_check1("h")).to eq ["_", "h", "_", "_", "_", "_" ]
+  end
+
 end

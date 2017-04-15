@@ -10,16 +10,18 @@
 
 class Name_game
    attr_accessor :word
-   attr_reader :guess_count, :is_over
+   attr_accessor :guess_count
+   attr_reader :is_over
 
   def initialize
-    @word = "word"
+    @word = "theory"
     @guess_count = 0
+    @hint = ""
     # @is_over = false
   end
 
   def word_to_guess(word_to_guess)
-    word = word_to_guess
+    @word = word_to_guess
   end
 
   def length
@@ -29,36 +31,81 @@ class Name_game
   def split
     @word.split('')
   end
-  
 
-def letter_check(letter_guess)
-  i = 0
-  # if word.include?(letter_guess)
-    while i < word.length 
-      if letter_guess == word[i]
-       word[i] = letter_guess
-      else  word[i] = "_"
+  def include?(letter)
+    @word.include?(letter)
+  end
+
+  def guess_counter
+    @guess_count += 1
+  end
+
+  def letter_check(letter_guess)
+    i = 0
+        while i < word.length
+        if word.include?(letter_guess)
+          while i < word.length 
+            if letter_guess == word[i]
+            @hint[i] = letter_guess
+            else  @hint[i] = "_"
+            end
+          i += 1
+         # break if letter_guess == word
+          end
+        p @hint
+         else
+         p "guess another letter"
+         i += 1
+         letter_guess = gets.chomp
+         # i +=1 
+        end
       end
-     i += 1
-    end
-    p word
-      # @guess_count += 1
-  # else
-  #     p "try another letter"
-
-       # @guess_count += 1 
-     end
+  end
 end
 
+#   def letter_check(letter_guess)
+#     i = 0
+#     # @guess_count += 1 
+#     if word.include?(letter_guess)
+#       while i < word.length 
+#           if letter_guess == word[i]
+#           @hint[i] = letter_guess
+#           else  @hint[i] = "_"
+#           end
+#         i += 1
+#       end
+#     p @hint
+#     else
+#     p "try another letter"
+#     end
+#   end
+# end
 ## USER INTERFACE
 
 puts " Welcome to Hangman basic "
 name_game = Name_game.new
 
 puts " What word do you want to player 2 to guess?"
-word_to_guess = gets.chomp
-word = word_to_guess.split('')
+word = gets.chomp
+name_game.word_to_guess(word)
+
 
 puts "Player 2 enter a letter to see if it is in the word"
 letter = gets.chomp
-name_game.letter_check(letter)
+guesses = 0
+until guesses == (name_game.word_to_guess(word).length + 2)
+  name_game.letter_check(letter)
+  puts "guess another letter"
+  letter = gets.chomp
+  guesses += 1
+  if guesses == (name_game.word_to_guess(word).length + 2)
+    p "didnt make it! sorry :("
+  end
+  if letter == word 
+    p "nailed it! good job"
+     guesses = (name_game.word_to_guess(word).length + 2)
+  end
+end
+
+
+
