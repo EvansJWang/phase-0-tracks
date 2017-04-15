@@ -13,6 +13,7 @@ class Name_game
    attr_reader :guess_count, :is_over
 
   def initialize
+    @word = "word"
     @guess_count = 0
     # @is_over = false
   end
@@ -20,35 +21,44 @@ class Name_game
   def word_to_guess(word_to_guess)
     word = word_to_guess
   end
-    
+
+  def length
+    @word.length    
+  end
+
+  def split
+    @word.split('')
+  end
+  
 
 def letter_check(letter_guess)
-  word = ["t", "h", "e", "o", "r", "y"]
   i = 0
-  if word.include?(letter_guess)
+  # if word.include?(letter_guess)
     while i < word.length 
       if letter_guess == word[i]
        word[i] = letter_guess
-      else  
-       word[i] = "_"
+      else  word[i] = "_"
       end
      i += 1
     end
     p word
       # @guess_count += 1
-  else
-      p "try another letter"
+  # else
+  #     p "try another letter"
 
        # @guess_count += 1 
-  end
-  end
+     end
 end
 
-### USER INTERFACE
+## USER INTERFACE
 
-# puts " Welcome to Hangman basic "
-# name_game = Name_game.new
+puts " Welcome to Hangman basic "
+name_game = Name_game.new
 
-# puts " What word do you want to player 2 to guess?"
-# word_to_guess = gets.chomp
-# new_game.word_to_guess(word_to_guess)
+puts " What word do you want to player 2 to guess?"
+word_to_guess = gets.chomp
+word = word_to_guess.split('')
+
+puts "Player 2 enter a letter to see if it is in the word"
+letter = gets.chomp
+name_game.letter_check(letter)
