@@ -5,3 +5,4 @@
 // 3.store the length in a new array.
 // 4. compare all of the lengths(integers) in new array to determine highest
 // 5. return the word or phrase at the same index as the index of the highest second array number
+
