@@ -1,3 +1,5 @@
+
+
 // Create a function that takes the longest word 
 // or phrase in an array and returns it
 // 1. Determine which is the longest word or phrase in array
@@ -5,4 +7,19 @@
 // 3.store the length in a new array.
 // 4. compare all of the lengths(integers) in new array to determine highest
 // 5. return the word or phrase at the same index as the index of the highest second array number
+var arr = ["long phrase","longest phrase","longer phrase"]
 
+function lengthChecker(arr){
+
+for (var i = 0; i < (arr.length - 1); i++){
+
+  if arr[i].length > arr[i+1].length
+    delete arr[i+1]
+  else
+    delete arr[i]
+  console.log(arr)
+}
+}
+;
+var arr = ["long phrase","longest phrase","longer phrase"]
+console.log(lengthChecker(arr))
