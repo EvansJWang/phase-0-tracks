@@ -119,3 +119,31 @@ end
 
 #=======================================================================
 # Reflection Section
+
+# What are the differences between the two different hash syntaxes shown in the state_data file?
+# STATE_DATA is a constant variable, can be accessed globally because it was defined outside the class.
+# It is also a hash that contains a nested hash.
+
+# What does require_relative do? How is it different from require?
+# Allows access of another file (no need for path if in same folder)
+# require is used for modules and needs a absolute path
+
+
+# What are some ways to iterate through a hash?
+# hash.each do | key, value |
+#   hash[:key]
+# hash.keys
+# hash.values
+
+
+# When refactoring virus_effects, what stood out to you about the variables, if anything?
+# variables were redundant and saw the opportunity to refactor using the case statement
+
+
+# What concept did you most solidify in this challenge?
+# iterating through hash
+# case statements
+# instance variables
+# calling methods within methods
+# private methods
+# creating multiple instances with loop 
