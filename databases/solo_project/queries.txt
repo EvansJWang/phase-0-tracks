@@ -3,3 +3,6 @@ UPDATE movies SET genre=4 WHERE title="Forrest Gump";
 select * from movies, genre;
 select movies.title, genre.genre from movies, genre;
 delete from movies where title like "Titanic";
+select movies.title, genre.genre from movies, genre where movies.title = "Titanic" AND genre.genre = "comedy";
+select movies.year, genre.genre from movies, genre where movies.year = "2010";
+select movies.title, genre.genre from movies, genre where movies.title = "half-baked" OR genre.genre = "drama";
