@@ -1,0 +1,5 @@
+select users.first_name, businesses.name, reviews.stars from users, businesses, reviews where users.first_name= "Bradford";
+select * from users join reviews ON users.id = reviews.user_id;
+select * from users join reviews ON users.id = reviews.user_id JOIN businesses ON businesses.id = reviews.business_id;
+select * from users join reviews ON users.id = reviews.user_id JOIN businesses ON businesses.id = reviews.business_id where businesses.name = "Grundy Hollow Wedding Chapel";
+// Join with the common thread 
