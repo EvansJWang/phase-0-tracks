@@ -73,22 +73,77 @@ end
  # update_deadlift(315, "May 2")
 
 # Retrieve current PR's
-gainz = sbd.execute("Select * FROM SBD")
-gainz.each do |pr|
-  if pr['Squat'].to_i > 0 
-  puts "Squat gains are #{pr['Squat']} on #{pr['S_date']}"
-  elsif 
-    pr['Bench'].to_i > 0 
-    puts "Bench gains are #{pr['Bench']} on #{pr['B_date']}"
-  elsif 
-    pr['Deadlift'].to_i > 0 
-    puts "Deadlift gains are #{pr['Deadlift']} on #{pr['D_date']}"
-  end
+
+# gainz = sbd.execute("Select * FROM SBD")
+# gainz.each do |pr|
+#     if 
+#       pr['Squat'].to_i > 0 
+#       puts "Squat gains are #{pr['Squat']} on #{pr['S_date']}"
+#     elsif 
+#       pr['Bench'].to_i > 0 
+#       puts "Bench gains are #{pr['Bench']} on #{pr['B_date']}"
+#     elsif 
+#       pr['Deadlift'].to_i > 0 
+#       puts "Deadlift gains are #{pr['Deadlift']} on #{pr['D_date']}"
+#     end
+#   end
+
+
+### USER INTERFACE
+puts "Did you make gainz today? (y/n)"
+progress = gets.chomp
+
+if progress == "y" 
+  puts "Squat,Bench or Deadlift?"
+    lift = gets.chomp
+    if lift.downcase == "squat"
+      puts "What did you lift?"
+        pr = gets.chomp
+        puts " What is today's date?"
+        date = gets.chomp
+        update_squat(pr,date)
+    elsif lift.downcase == "bench"
+      puts "What did you lift?"
+        pr = gets.chomp
+        puts " What is today's date?"
+        date = gets.chomp
+        update_bench(pr,date)
+    elsif lift.downcase == "deadlift"
+      puts "What did you lift?"
+        pr = gets.chomp
+        puts " What is today's date?"
+        date = gets.chomp
+        update_deadlift(pr,date)
+    end
+
+else 
+# gainz = sbd.execute("Select * FROM SBD")
+# gainz.each do |pr|
+#     if 
+#       pr['Squat'].to_i > 0 
+#       puts "Squat gains are #{pr['Squat']} on #{pr['S_date']}"
+#     elsif 
+#       pr['Bench'].to_i > 0 
+#       puts "Bench gains are #{pr['Bench']} on #{pr['B_date']}"
+#     elsif 
+#       pr['Deadlift'].to_i > 0 
+#       puts "Deadlift gains are #{pr['Deadlift']} on #{pr['D_date']}"
+#     end
+#   end
 end
 
-# explore ORM by retrieving data
-# kittens = db.execute("SELECT * FROM kittens")
-# kittens.each do |kitten|
-#  puts "#{kitten['name']} is #{kitten['age']}"
-# end
+
+gainz = sbd.execute("Select * FROM SBD")
+gainz.each do |pr|
+    if 
+      pr['Squat'].to_i > 0 
+      puts "Squat gains are #{pr['Squat']} on #{pr['S_date']}"
+    elsif 
+      pr['Bench'].to_i > 0 
+      puts "Bench gains are #{pr['Bench']} on #{pr['B_date']}"
+    elsif 
+      pr['Deadlift'].to_i > 0 
+      puts "Deadlift gains are #{pr['Deadlift']} on #{pr['D_date']}"
+    end
+end
 
