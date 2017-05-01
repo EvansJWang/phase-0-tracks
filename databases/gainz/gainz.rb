@@ -14,11 +14,11 @@ create_SBD_table = <<-SQL
   CREATE TABLE IF NOT EXISTS SBD (
   id INTEGER PRIMARY KEY,
   Squat INT,
-  S_date INT,
+  S_date TEXT,
   Bench INT,
-  B_date INT,
+  B_date TEXt,
   Deadlift INT,
-  D_date INT
+  D_date TEXT
   )
 SQL
 
@@ -46,36 +46,45 @@ user.execute(create_user_table)
 #user.execute("INSERT INTO Wangtron (name, weight, Current_Squat, Current_bench, Current_Deadlift) VALUES ('Evans', 192, 225, 185, 225)")
 
 # modify user info
-def update_squat(squat_pr)
+def update_squat(squat_pr, date)
   user = SQLite3::Database.new("Wangtron.db")
   user.execute("UPDATE Wangtron SET Current_Squat=('#{squat_pr}') WHERE name = 'Evans'")
+  sbd = SQLite3::Database.new("SBD.db")
+  sbd.execute("INSERT INTO SBD (Squat, S_date) VALUES ('#{squat_pr}', '#{date}')")
 end
 
-def update_bench(bench_pr)
+def update_bench(bench_pr, date)
   user = SQLite3::Database.new("Wangtron.db")
   user.execute("UPDATE Wangtron SET Current_Bench=('#{bench_pr}') WHERE name = 'Evans'")
+  sbd = SQLite3::Database.new("SBD.db")
+  sbd.execute("INSERT INTO SBD (Bench, B_date) VALUES ('#{bench_pr}', '#{date}')")
 end
 
-def update_deadlift(deadlift_pr)
+def update_deadlift(deadlift_pr, date)
   user = SQLite3::Database.new("Wangtron.db")
   user.execute("UPDATE Wangtron SET Current_Deadlift=('#{deadlift_pr}') WHERE name = 'Evans'")
-
+  sbd = SQLite3::Database.new("SBD.db")
+  sbd.execute("INSERT INTO SBD (Deadlift, D_date) VALUES ('#{deadlift_pr}', '#{date}')")
 end
 
-update_bench(185)
-update_squat(225)
-update_deadlift(315)
+# Working Examples
+ # update_bench(185, "May 1")
+ # update_squat(225, "April 30")
+ # update_deadlift(315, "May 2")
 
-# add LOOOOTS of kittens!
-# so. many. kittens. 
-#KittenExplosion
-# def create_kitten(db, name, age)
-#   db.execute("INSERT INTO kittens (name, age) VALUES (?, ?)", [name, age])
-# end
-
-# 10000.times do
-#   create_kitten(db, Faker::Name.name, 0)
-# end
+# Retrieve current PR's
+gainz = sbd.execute("Select * FROM SBD")
+gainz.each do |pr|
+  if pr['Squat'].to_i > 0 
+  puts "Squat gains are #{pr['Squat']} on #{pr['S_date']}"
+  elsif 
+    pr['Bench'].to_i > 0 
+    puts "Bench gains are #{pr['Bench']} on #{pr['B_date']}"
+  elsif 
+    pr['Deadlift'].to_i > 0 
+    puts "Deadlift gains are #{pr['Deadlift']} on #{pr['D_date']}"
+  end
+end
 
 # explore ORM by retrieving data
 # kittens = db.execute("SELECT * FROM kittens")
