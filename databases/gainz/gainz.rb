@@ -23,8 +23,8 @@ create_SBD_table = <<-SQL
 SQL
 
 create_user_table = <<-User
-  CREATE TABLE IF NOT EXISTS User (
-  id INTEGER PRIMARY KEY
+  CREATE TABLE IF NOT EXISTS Wangtron (
+  id INTEGER PRIMARY KEY,
   name TEXT,
   weight INT,
   Current_Squat INT,
@@ -42,8 +42,29 @@ sbd.execute(create_SBD_table)
 user.execute(create_user_table)
 
 
-# add a test kitten
-# db.execute("INSERT INTO kittens (name, age) VALUES ('Bob', 10)")
+# add user info
+#user.execute("INSERT INTO Wangtron (name, weight, Current_Squat, Current_bench, Current_Deadlift) VALUES ('Evans', 192, 225, 185, 225)")
+
+# modify user info
+def update_squat(squat_pr)
+  user = SQLite3::Database.new("Wangtron.db")
+  user.execute("UPDATE Wangtron SET Current_Squat=('#{squat_pr}') WHERE name = 'Evans'")
+end
+
+def update_bench(bench_pr)
+  user = SQLite3::Database.new("Wangtron.db")
+  user.execute("UPDATE Wangtron SET Current_Bench=('#{bench_pr}') WHERE name = 'Evans'")
+end
+
+def update_deadlift(deadlift_pr)
+  user = SQLite3::Database.new("Wangtron.db")
+  user.execute("UPDATE Wangtron SET Current_Deadlift=('#{deadlift_pr}') WHERE name = 'Evans'")
+
+end
+
+update_bench(185)
+update_squat(225)
+update_deadlift(315)
 
 # add LOOOOTS of kittens!
 # so. many. kittens. 
