@@ -2,9 +2,11 @@
 <html>
 <head>
 <link rel="stylesheet" type="text/css" href="styles.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <title>Love</title>
 </head>
   <h1>All you need is love</h1>
+  <script>$('h1').css('color','red')</script>
   <img src="https://s-media-cache-ak0.pinimg.com/736x/73/51/53/7351530e27f9875d03e87886feb178ae.jpg" alt=love_pic id="lovequote">
   <img src="https://tribwttv.files.wordpress.com/2016/06/fireworks-620-x-349.jpg" alt=fireworks id="gif">
   <p class="paragraph"> This website is for all the lovers out there. This ones for you..</p>
@@ -44,6 +46,13 @@ There you will find the "scientific definition" of love
 <button> This is the best button </button>
 </footer>
 <script src=script.js></script>
+<script>
+$(document).ready(function(){
+    $("button").click(function(){
+        $("img").hide();
+    });
+});
+</script>
   </body>
 </html>
 
